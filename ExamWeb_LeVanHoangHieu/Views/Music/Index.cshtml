@@ -1,0 +1,40 @@
+﻿@model List<DiaNhac>
+
+<div class="text-end mb-3">
+    <a asp-action="Add" class="btn btn-primary">
+        <i class="bi bi-patch-plus-fill"></i> Thêm mới
+    </a>
+</div>
+
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Tựa CD</th>
+            <th>Thể Loại</th>
+            <th>Giá bán</th>
+            <th>Số lượng</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var dn in Model)
+        {
+            <tr>
+                <td>@dn.TuaCD</td>
+                <td>@(dn.TrongNuoc ? "Việt Nam" : "Nước ngoài")</td>
+                <td>@String.Format("{0:#,##0} đ", dn.GiaBan)</td>
+                <td>@dn.SoLuong</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@dn.Id" class="btn btn-info btn-sm">
+                        <i class="bi bi-pencil"></i> Edit
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@dn.Id" class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div class="mt-2 alert alert-info">
+    Có tất cả <b>@Model.Count</b> loại CD - @ViewBag.TotalSoLuong<b> đĩa nhạc trong cửa hàng</b>
+</div>

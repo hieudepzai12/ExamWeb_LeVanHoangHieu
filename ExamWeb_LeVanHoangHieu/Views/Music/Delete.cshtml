@@ -1,0 +1,7 @@
+﻿@model DiaNhac
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <p>Bạn có chắc chắn muốn xóa đĩa nhạc <b>@Model.TuaCD</b> không?</p>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
