@@ -1,34 +1,33 @@
 ﻿@model DiaNhac
+
 <form asp-action="Add" method="post" class="form-horizontal">
+    <h2>Thêm mới sản phẩm</h2>
     <div class="mb-3">
         <label asp-for="TuaCD" class="form-label">Tựa CD</label>
-        <input asp-for="TuaCD" class="form-control" />
+        <input asp-for="TuaCD" class="form-control" placeholder="Nhập tựa CD"/>
         <span asp-validation-for="TuaCD" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="NgheSi" class="form-label">Nghệ sĩ</label>
-        <input asp-for="NgheSi" class="form-control" />
+        <input asp-for="NgheSi" class="form-control" placeholder="Nhập tên nghệ sĩ"/>
         <span asp-validation-for="NgheSi" class="text-danger"></span>
         <div class="mb-3">
             <label asp-for="TrongNuoc" class="form-label">Thể Loại</label>
-            <div>
-                <input asp-for="TrongNuoc" type="radio" value="true" id="TrongNuocTrue" />
-                <label for="TrongNuocTrue">Trong nước</label>
-            </div>
-            <div>
-                <input asp-for="TrongNuoc" type="radio" value="false" id="TrongNuocFalse" />
-                <label for="TrongNuocFalse">Nước ngoài</label>
-            </div>
+            </br>
+            <input asp-for="TrongNuoc" type="radio" value="true" id="TrongNuocTrue" checked/>
+            <label for="TrongNuocTrue">Trong nước</label>
+            <input asp-for="TrongNuoc" type="radio" value="false" id="TrongNuocFalse" />
+            <label for="TrongNuocFalse">Nước ngoài</label>
             <span asp-validation-for="TrongNuoc" class="text-danger"></span>
         </div>
     <div class="mb-3">
         <label asp-for="GiaBan" class="form-label">Giá bán</label>
-        <input asp-for="GiaBan" class="form-control" />
+        <input asp-for="GiaBan" class="form-control" placeholder="Nhập giá bán" />
         <span asp-validation-for="GiaBan" class="text-danger"></span>
         </div>
     <div class="mb-3">
         <label asp-for="SoLuong" class="form-label">Số lượng</label>
-        <input asp-for="SoLuong" class="form-control" />
+        <input asp-for="SoLuong" class="form-control" placeholder="Nhập số lượng"/>
         <span asp-validation-for="SoLuong" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Add</button>
